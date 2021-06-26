@@ -2,41 +2,54 @@
 <html>
 <head>
 <meta charset="utf-8"> 
-<title>VSZO</title> 
-<style>
-#example1 {
-	margin: 20px;
-    border: 10px dotted black;
-    padding:35px;
-    background: yellow;
+<title>VSZO</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<style> 
+div
+{
+	width:100px;
+	height:100px;
+	background:red;
+	position:relative;
+	animation-name:myfirst;
+	animation-duration:3s;
+	animation-timing-function:linear;
+	animation-delay:1s;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+	animation-play-state:running;
+	/* Safari and Chrome: */
+	-webkit-animation-name:myfirst;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-delay:1s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-direction:alternate;
+	-webkit-animation-play-state:running;
 }
 
-#example2 {
-	margin: 20px;
-    border: 10px dotted black;
-    padding:35px;
-    background: yellow;
-    background-clip: padding-box;
+@keyframes myfirst
+{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
 }
 
-p {
-	margin: 20px;
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
 }
 </style>
 </head>
 <body>
 
-<p>没有背景剪裁 (border-box没有定义):</p>
-<div id="example1">
-<h2>Lorem Ipsum Dolor</h2>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-</div>
-
-<p>background-clip: padding-box:</p>
-<div id="example2">
-<h2>Lorem Ipsum Dolor</h2>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-</div>
+<div></div>
 
 </body>
 </html>
